@@ -1,0 +1,381 @@
+<title>سياسة خصوصية عُمرتي</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root {
+    --primary: #064E3B;
+    --primary-light: #075E45;
+    --gold: #D4AF37;
+    --gold-light: #E5B94E;
+    --bg: #F8F6F0;
+    --surface: #FFFFFF;
+    --text: #17212B;
+    --text-secondary: #5B6670;
+    --border: #E4DFD3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1613;
+      --surface: #16211D;
+      --text: #ECE7DA;
+      --text-secondary: #9BA79F;
+      --border: #26332D;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1613;
+    --surface: #16211D;
+    --text: #ECE7DA;
+    --text-secondary: #9BA79F;
+    --border: #26332D;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Tajawal', 'Segoe UI', sans-serif;
+    line-height: 1.75;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(212,175,55,.55);
+    color: var(--gold-light);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(26px, 5vw, 36px);
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .hero p {
+    margin: 0;
+    color: rgba(255,255,255,.82);
+    font-size: 15px;
+  }
+
+  .lang-switch {
+    max-width: 720px;
+    margin: -20px auto 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  .lang-switch a {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(6,78,59,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .lang-switch a { color: var(--gold-light); }
+  }
+  :root[data-theme="dark"] .lang-switch a { color: var(--gold-light); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 44px 24px 80px;
+  }
+
+  section[lang] { display: none; }
+  section[lang]:target,
+  section[lang].active { display: block; }
+
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 40px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) h2 { color: var(--gold-light); }
+  }
+  :root[data-theme="dark"] h2 { color: var(--gold-light); }
+
+  h2 .num {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 14px; color: var(--text); }
+  ul { margin: 0 0 14px; padding-inline-start: 22px; }
+  li { margin-bottom: 8px; }
+  strong { color: var(--text); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .card.gold-edge { border-inline-start: 3px solid var(--gold); }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 18px;
+    font-size: 14.5px;
+  }
+  .data-table th, .data-table td {
+    text-align: start;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table th {
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .table-wrap { overflow-x: auto; }
+
+  .contact-card {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .contact-card div p { color: rgba(255,255,255,.78); margin: 4px 0 0; font-size: 13.5px; }
+  .contact-card a {
+    background: var(--gold);
+    color: var(--primary);
+    font-weight: 800;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    padding: 28px 24px 44px;
+  }
+
+  section[lang="fr"] { font-family: 'Lora', serif; }
+  section[lang="fr"] h2 { font-family: 'Lora', serif; }
+</style>
+
+<div class="hero">
+  <span class="badge">RAHA Voyages · عُمرتي / Omraty</span>
+  <h1 id="top">سياسة الخصوصية · Politique de confidentialité</h1>
+  <p>تطبيق حجز رحلات العمرة والحج · Application de réservation Omra &amp; Hajj</p>
+</div>
+
+<div class="lang-switch">
+  <a href="#ar" onclick="showLang('ar')">العربية</a>
+  <a href="#fr" onclick="showLang('fr')">Français</a>
+</div>
+
+<main>
+  <section lang="ar" dir="rtl" id="ar" class="active">
+    <div class="doc-meta">
+      <span>آخر تحديث: 30 سبتمبر 2026</span>
+      <span>يسري على: تطبيق عُمرتي (iOS و Android)</span>
+    </div>
+
+    <p>تحترم <strong>RAHA Voyages</strong> (وكالة سفريات مسجّلة في موريتانيا، الناشرة لتطبيق <strong>عُمرتي</strong>) خصوصيتك. توضّح هذه السياسة ما هي البيانات التي نجمعها عند استخدامك للتطبيق، وكيف نستخدمها، ومع من نشاركها، وكيف يمكنك حذفها.</p>
+
+    <h2><span class="num">1</span> المعلومات التي نجمعها</h2>
+    <p>نجمع فقط البيانات اللازمة لإتمام حجزك وتأكيد هويتك:</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <tr><th>البيانات</th><th>الغرض</th></tr>
+        <tr><td>رقم الهاتف</td><td>إنشاء الحساب وتسجيل الدخول (عبر كلمة مرور أو رمز تحقق واتساب)</td></tr>
+        <tr><td>الجنس</td><td>تنظيم الحجوزات الجماعية (تقسيم الغرف حسب الجنس)</td></tr>
+        <tr><td>الرقم الوطني للتعريف وصورة بطاقة الهوية</td><td>التحقق من الهوية قبل السفر، وفق متطلبات الوكالة</td></tr>
+        <tr><td>بيانات الحجز</td><td>الباقة المختارة، الفندق، نوع الغرفة، التواريخ</td></tr>
+        <tr><td>حالة الدفع ورمز العملية</td><td>تتبع الدفعات عبر Moov Money (لا نخزّن بيانات بطاقتك البنكية)</td></tr>
+        <tr><td>رمز الإشعارات</td><td>إرسال إشعارات متعلقة بحجزك (تأكيد، تذكير بالدفع)</td></tr>
+      </table>
+    </div>
+
+    <h2><span class="num">2</span> كيف نستخدم بياناتك</h2>
+    <ul>
+      <li>إنشاء حسابك وتمكينك من تسجيل الدخول.</li>
+      <li>معالجة حجوزاتك ومدفوعاتك.</li>
+      <li>التحقق من هويتك قبل تأكيد السفر.</li>
+      <li>التواصل معك بخصوص حجزك (واتساب، إشعارات داخل التطبيق).</li>
+      <li>تحسين خدماتنا ومنع الاحتيال.</li>
+    </ul>
+    <p>لا نبيع بياناتك ولا نستخدمها لأغراض إعلانية.</p>
+
+    <h2><span class="num">3</span> مع من نشارك بياناتك</h2>
+    <p>نستعين بخدمات خارجية موثوقة، كلٌّ لغرض محدد فقط:</p>
+    <div class="card gold-edge">
+      <p style="margin-bottom:6px"><strong>Moov Money</strong> — معالجة الدفعات (عملية الدفع نفسها تتم خارج التطبيق عبر هذا المشغّل الموريتاني).</p>
+      <p style="margin-bottom:6px"><strong>WhatsApp Business API (شركة Meta)</strong> — إرسال رمز التحقق (OTP) فقط عند تسجيل الدخول.</p>
+      <p style="margin-bottom:6px"><strong>Firebase (Google)</strong> — إرسال الإشعارات داخل التطبيق.</p>
+      <p style="margin-bottom:0"><strong>Amazon S3</strong> — تخزين آمن لصورة بطاقة الهوية والفواتير.</p>
+    </div>
+
+    <h2><span class="num">4</span> مدة الاحتفاظ بالبيانات</h2>
+    <p>نحتفظ ببياناتك طالما حسابك نشط. بعد حذف حسابك، تُحذف بياناتك الشخصية (رقم الهاتف، كلمة المرور، الرقم الوطني، صورة الهوية) نهائيًا. تبقى سجلات الحجوزات والمدفوعات محفوظة، دون ربطها باسمك، للأغراض المحاسبية والقانونية التي يفرضها القانون الموريتاني.</p>
+
+    <h2><span class="num">5</span> حذف حسابك</h2>
+    <p>يمكنك حذف حسابك في أي وقت مباشرة من التطبيق: <strong>حسابي ← منطقة خطرة ← حذف الحساب</strong>. هذا الإجراء نهائي وفوري: لن تتمكن بعده من تسجيل الدخول بنفس الرقم مجددًا بهذه البيانات.</p>
+
+    <h2><span class="num">6</span> أمان بياناتك</h2>
+    <p>تُنقل بياناتك عبر اتصال مشفّر (HTTPS)، وكلمات المرور مخزّنة بصيغة مشفّرة لا يمكن قراءتها. الوصول إلى بياناتك مقصور على الموظفين المخوّلين فقط.</p>
+
+    <h2><span class="num">7</span> حقوقك</h2>
+    <ul>
+      <li>الوصول إلى بياناتك الشخصية المخزّنة لدينا.</li>
+      <li>تصحيح أي معلومة غير دقيقة.</li>
+      <li>حذف حسابك وبياناتك الشخصية (انظر البند 5).</li>
+    </ul>
+
+    <h2><span class="num">8</span> تحديثات هذه السياسة</h2>
+    <p>قد نُحدّث هذه السياسة من حين لآخر. سيظهر تاريخ آخر تحديث دائمًا أعلى هذه الصفحة.</p>
+
+    <div class="contact-card">
+      <div>
+        <strong>لديك سؤال حول خصوصيتك؟</strong>
+        <p>تواصل معنا مباشرة عبر واتساب</p>
+      </div>
+      <a href="https://wa.me/22242661765" target="_blank" rel="noopener">+222 42 66 17 65</a>
+    </div>
+  </section>
+
+  <section lang="fr" dir="ltr" id="fr">
+    <div class="doc-meta">
+      <span>Dernière mise à jour : 30 septembre 2026</span>
+      <span>S'applique à : l'application Omraty (iOS et Android)</span>
+    </div>
+
+    <p><strong>RAHA Voyages</strong> (agence de voyage enregistrée en Mauritanie, éditrice de l'application <strong>Omraty</strong>) respecte votre vie privée. Cette politique explique quelles données nous collectons lorsque vous utilisez l'application, comment nous les utilisons, avec qui nous les partageons, et comment vous pouvez les supprimer.</p>
+
+    <h2><span class="num">1</span> Les informations que nous collectons</h2>
+    <p>Nous ne collectons que les données nécessaires à votre réservation et à la vérification de votre identité :</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <tr><th>Donnée</th><th>Finalité</th></tr>
+        <tr><td>Numéro de téléphone</td><td>Création du compte et connexion (mot de passe ou code WhatsApp)</td></tr>
+        <tr><td>Sexe</td><td>Organisation des réservations groupées (répartition des chambres)</td></tr>
+        <tr><td>Numéro d'identité national (NNI) et photo de la pièce d'identité</td><td>Vérification d'identité avant le voyage, selon les exigences de l'agence</td></tr>
+        <tr><td>Données de réservation</td><td>Package choisi, hôtel, type de chambre, dates</td></tr>
+        <tr><td>Statut de paiement et code de transaction</td><td>Suivi des paiements via Moov Money (nous ne stockons pas vos données bancaires)</td></tr>
+        <tr><td>Jeton de notification</td><td>Envoi de notifications liées à votre réservation (confirmation, rappel de paiement)</td></tr>
+      </table>
+    </div>
+
+    <h2><span class="num">2</span> Comment nous utilisons vos données</h2>
+    <ul>
+      <li>Créer votre compte et vous permettre de vous connecter.</li>
+      <li>Traiter vos réservations et vos paiements.</li>
+      <li>Vérifier votre identité avant de confirmer le voyage.</li>
+      <li>Communiquer avec vous au sujet de votre réservation (WhatsApp, notifications in-app).</li>
+      <li>Améliorer nos services et prévenir la fraude.</li>
+    </ul>
+    <p>Nous ne vendons jamais vos données et ne les utilisons pas à des fins publicitaires.</p>
+
+    <h2><span class="num">3</span> Avec qui nous partageons vos données</h2>
+    <p>Nous faisons appel à des prestataires de confiance, chacun pour un usage précis :</p>
+    <div class="card gold-edge">
+      <p style="margin-bottom:6px"><strong>Moov Money</strong> — traitement des paiements (la transaction elle-même a lieu hors de l'application, via cet opérateur mauritanien).</p>
+      <p style="margin-bottom:6px"><strong>WhatsApp Business API (Meta)</strong> — envoi du code de vérification (OTP) à la connexion uniquement.</p>
+      <p style="margin-bottom:6px"><strong>Firebase (Google)</strong> — envoi des notifications dans l'application.</p>
+      <p style="margin-bottom:0"><strong>Amazon S3</strong> — stockage sécurisé de la photo d'identité et des factures.</p>
+    </div>
+
+    <h2><span class="num">4</span> Durée de conservation</h2>
+    <p>Nous conservons vos données tant que votre compte est actif. Après suppression de votre compte, vos données personnelles (téléphone, mot de passe, NNI, photo d'identité) sont définitivement effacées. Les enregistrements de réservations et de paiements sont conservés, sans rester liés à votre identité, à des fins comptables et légales imposées par le droit mauritanien.</p>
+
+    <h2><span class="num">5</span> Supprimer votre compte</h2>
+    <p>Vous pouvez supprimer votre compte à tout moment, directement depuis l'application : <strong>Mon compte → Zone dangereuse → Supprimer le compte</strong>. Cette action est définitive et immédiate : vous ne pourrez plus vous reconnecter avec le même numéro et ces mêmes données.</p>
+
+    <h2><span class="num">6</span> Sécurité de vos données</h2>
+    <p>Vos données transitent via une connexion chiffrée (HTTPS), et les mots de passe sont stockés sous une forme chiffrée illisible. L'accès à vos données est réservé au personnel autorisé.</p>
+
+    <h2><span class="num">7</span> Vos droits</h2>
+    <ul>
+      <li>Accéder aux données personnelles que nous détenons sur vous.</li>
+      <li>Corriger toute information inexacte.</li>
+      <li>Supprimer votre compte et vos données personnelles (voir point 5).</li>
+    </ul>
+
+    <h2><span class="num">8</span> Mise à jour de cette politique</h2>
+    <p>Nous pouvons mettre à jour cette politique de temps à autre. La date de dernière mise à jour est toujours affichée en haut de cette page.</p>
+
+    <div class="contact-card">
+      <div>
+        <strong>Une question sur vos données ?</strong>
+        <p>Contactez-nous directement via WhatsApp</p>
+      </div>
+      <a href="https://wa.me/22242661765" target="_blank" rel="noopener">+222 42 66 17 65</a>
+    </div>
+  </section>
+</main>
+
+<footer>RAHA Voyages — Omraty · Mauritanie</footer>
+
+<script>
+  function showLang(lang) {
+    document.querySelectorAll('section[lang]').forEach(function (s) {
+      s.classList.toggle('active', s.getAttribute('lang') === lang);
+    });
+  }
+  try {
+    var hash = window.location.hash.replace('#', '');
+    if (hash === 'fr' || hash === 'ar') showLang(hash);
+  } catch (e) {}
+</script>
